@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabenliste (Simona Ascher)</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Aufgabenliste</h1>
+
+        <!-- Aufgabenliste: -->
+        <form name="aufgabenliste">
+            <fieldset class="row">
+                <legend>Aufgabenliste</legend>
+                <div class="col">
+                    <div id="titel">
+                        <label for="titelInput">Titel:</label>
+                        <input type="text" name="title" id="titelInput">
+                    </div>
+                    <div id="bezeichnung">
+                        <label for="bezeichnungInput">Bezeichnung:</label>
+                        <textarea name="bezeichnung" rows="6" cols="26" id="bezeichnungInput"></textarea>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div id="faelligkeit">
+                                <label for="faelligkeitInput">Fälligkeitsdatum:</label>
+                                <input type="date" name="faelligkeit" id="faelligkeitInput">
+                            </div>
+                            <div id="kategorie">
+                                <label for="kategorieInput">Kategorie:</label>
+                                <select id="kategorieInput" name="kategorie" size="1">
+                                    <option value="OOP">OOP</option>
+                                    <option value="WHM">WHM</option>
+                                    <option value="WAC">WAC</option>
+                                    <option value="AV">AV</option>
+                                    <option value="BS">BS</option>
+                                    <option value="LERN">LERN</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="prioritaet">
+                            <label>Priorität:</label>
+                            <div>
+                                <input type="radio" name="prioritaet" id="hoch" value="hoch">
+                                <label for="hoch">hoch</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="prioritaet" id="mittel" value="mittel">
+                                <label for="mittel">mittel</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="prioritaet" id="niedrig" value="niedrig">
+                                <label for="niedrig">niedirg</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="buttons" class="row">
+                        <input id="add" type="button" value="Neue Aufgabe anlegen"/>
+                        <input id="delete" type="button" value="Alle Aufgaben löschen"/>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!--Filter-->
+            <fieldset class="row">
+                <legend>Filter</legend>
+                <fieldset>
+                    <legend>Datumsfilter</legend>
+                    <div class="col">
+                        <div id="datumVon">
+                            <label for="von">Von</label>
+                            <input type="date" name="von" id="von">
+                        </div>
+                        <div id="datumBis">
+                            <label for="bis">Bis</label>
+                            <input type="date" name="bis" id="bis">
+                        </div>
+                        <input id="filterDate" type="button" value="Filter"/>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Prioritätsfilter</legend>
+                    <div class="col">
+                        <div>
+                            <input type="radio" name="prioritaetF" id="hochF" value="hoch">
+                            <label for="hochF">hoch</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="prioritaetF" id="mittelF" value="mittel">
+                            <label for="mittelF">mittel</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="prioritaetF" id="niedrigF" value="niedrig">
+                            <label for="niedrigF">niedirg</label>
+                        </div>
+                        <input id="filterPrioritaet" type="button" value="Filter"/>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Kategoriefilter</legend>
+
+                    <div class="col">
+                        <select id="kategorieF" name="kategorie" size="1">
+                            <option value="OOP">OOP</option>
+                            <option value="WHM">WHM</option>
+                            <option value="WAC">WAC</option>
+                            <option value="AV">AV</option>
+                            <option value="BS">BS</option>
+                            <option value="LERN">LERN</option>
+                        </select>
+                        <input id="filterKategorie" type="button" value="Filter"/>
+                    </div>
+
+                </fieldset>
+
+                <div class="col">
+                    <input id="deleteFilter" type="button" value="Filter aufheben"/>
+                </div>
+
+            </fieldset>
+        </form>
+
+        <!-- Tabelle mit Aufgaben: -->
+        <div class="row">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Titel</th>
+                        <th>Bezeichnung</th>
+                        <th>Kategorie</th>
+                        <th>Priorität</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script   src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
